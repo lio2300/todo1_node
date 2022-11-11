@@ -19,7 +19,7 @@ fastify.register(cors, {
 
 const start = async () => {
   try {
-    fastify.listen({ port: 5000 });
+    fastify.listen({ port: 5000, host: "0.0.0.0" });
 
     const address = fastify.server.address();
     const port = typeof address === "string" ? address : address?.port;
