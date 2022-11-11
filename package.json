@@ -1,0 +1,34 @@
+{
+  "name": "todo1_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ts",
+  "scripts": {
+    "start": "nodemon app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lio2300/todo1_node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lio2300/todo1_node/issues"
+  },
+  "homepage": "https://github.com/lio2300/todo1_node#readme",
+  "dependencies": {
+    "@fastify/postgres": "^5.1.0",
+    "@types/node": "^18.11.9",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.9.2",
+    "fluent-json-schema": "^4.0.0",
+    "nodemon": "^2.0.20",
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.6.5",
+    "typescript": "^4.8.4"
+  }
+}
