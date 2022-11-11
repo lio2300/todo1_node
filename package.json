@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/lio2300/todo1_node#readme",
   "dependencies": {
+    "@fastify/cors": "^8.2.0",
     "@fastify/postgres": "^5.1.0",
     "@types/node": "^18.11.9",
     "dotenv": "^16.0.3",

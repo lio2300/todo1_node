@@ -1,54 +1,13 @@
 import { RouteShorthandOptions } from "fastify";
 import S from "fluent-json-schema";
 
-const userResponseInterface = {
-  pk_user: {
-    type: "string",
-  },
-  user_name: {
-    type: "string",
-  },
-  user_firstname: {
-    type: "string",
-  },
-  user_lastname: {
-    type: "string",
-  },
-  user_email: {
-    type: "string",
-  },
-  user_phone: {
-    type: "string",
-  },
-  user_dni: {
-    type: "string",
-  },
-  user_age: {
-    type: "integer",
-  },
-  user_createdAt: {
-    type: "string",
-  },
-  user_status: {
-    type: "boolean",
-  },
-};
-
-const schemaUser: RouteShorthandOptions = {
-  schema: {
-    response: {
-      200: {
-        data: {
-          type: "array",
-          properties: userResponseInterface,
-        },
-        total: {
-          type: "integer",
-        },
-      },
-    },
-  },
-};
+const userTable = S.object()
+  .prop("offset", S.integer())
+  .required()
+  .prop("limit", S.integer())
+  .required()
+  .prop("search", S.string())
+  .required();
 
 const userBody = S.object()
   .prop("pk_user", S.string())
@@ -85,6 +44,11 @@ const schemaUserId = {
 const schemaUserDelete = {
   schema: {
     body: userDelete,
+  },
+};
+const schemaUser = {
+  schema: {
+    querystring: userTable,
   },
 };
 

@@ -1,9 +1,21 @@
 import Fastify, { FastifyInstance } from "fastify";
 import Routes from "./routes/main";
+import cors from "@fastify/cors";
 
 const fastify: FastifyInstance = Fastify({});
 
 fastify.register(Routes, { prefix: "/api" });
+fastify.register(cors, {
+  origin: true,
+  allowedHeaders: [
+    "Origin",
+    "X-Requested-With",
+    "Accept",
+    "Content-Type",
+    "Authorization",
+  ],
+  methods: ["GET", "PUT", "OPTIONS", "POST", "DELETE"],
+});
 
 const start = async () => {
   try {
